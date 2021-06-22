@@ -17,13 +17,13 @@ def write_tasks(data):
         return False
     data2 = []
     for id in data:
-        data2.append((id, ))
+        data2.append([id])
     try:
         q = '''INSERT INTO  tasks
-                (channel_id, added_on) VALUES
+                (channel_id, added_on)
                 VALUES
                 (%s, NOW() );'''
-        cursor.executemany(q, data)
+        cursor.executemany(q, data2)
     except Exception as error:
         print(error)
         # LOG
