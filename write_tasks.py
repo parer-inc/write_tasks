@@ -8,6 +8,7 @@ from methods.connection import get_redis, get_cursor
 
 r = get_redis()
 
+
 def write_tasks(data):
     """Write tasks into database (table tasks)
        data must be a 1d array of video ids"""
